@@ -33,6 +33,16 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function chats()
+    {
+        return $this->hasMany(Chat::class);
+    }
+
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
+    }
+
     /**
      * The attributes that should be cast.
      *
